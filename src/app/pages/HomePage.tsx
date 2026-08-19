@@ -281,17 +281,25 @@ export function HomePage() {
                 />
               ))}
 
-              <GoldCoin />
-
-              <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-8 px-3 py-1.5 rounded-xl text-xs font-bold tracking-widest"
-                style={{ background: "rgba(13,27,56,0.85)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,215,0,0.4)", color: "#FFD700", fontFamily: "Cinzel, serif" }}>
-                24K PURE
-              </motion.div>
-              <motion.div animate={{ y: [10, -10, 10] }} transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                className="absolute -bottom-6 -left-8 px-3 py-1.5 rounded-xl text-xs tracking-wide"
-                style={{ background: "rgba(13,27,56,0.85)", backdropFilter: "blur(12px)", border: "1px solid rgba(232,120,42,0.35)", color: "#E8782A", fontFamily: "Raleway, sans-serif" }}>
-                ₹{GOLD_RATE["24K"]}/gram today
+              <motion.div 
+                animate={{ y: [-15, 15, -15] }} 
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="relative z-10 flex items-center justify-center w-80 h-80 sm:w-[400px] sm:h-[400px]"
+              >
+                <video 
+                  src="/pot_of_gold.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full h-full object-cover"
+                  style={{ 
+                    mixBlendMode: "screen", 
+                    filter: "drop-shadow(0 0 35px rgba(255,215,0,0.6))",
+                    WebkitMaskImage: "radial-gradient(circle at center, black 45%, transparent 75%)",
+                    maskImage: "radial-gradient(circle at center, black 45%, transparent 75%)"
+                  }}
+                />
               </motion.div>
             </div>
           </motion.div>
