@@ -54,7 +54,7 @@ export function Navbar() {
             <img
               src="/goldlakshmi_logo.png"
               alt="GOLDLAKSHMI FINSERV"
-              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform rounded-lg"
+              className="h-16 sm:h-20 w-auto object-contain group-hover:scale-105 transition-transform rounded-lg"
             />
           </Link>
 

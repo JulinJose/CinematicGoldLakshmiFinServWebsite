@@ -8,7 +8,7 @@ export function FloatingActions() {
   const navigate = useNavigate();
 
   const actions = [
-    { icon: MessageCircle, label: "WhatsApp", color: "#25D366", action: () => { window.open("https://api.whatsapp.com/send/?phone=971505964599&text&type=phone_number&app_absent=0", "_blank"); } },
+    { icon: MessageCircle, label: "WhatsApp", color: "#25D366", action: () => { window.open("https://api.whatsapp.com/send/?phone=919828033273&text&type=phone_number&app_absent=0", "_blank"); } },
     { icon: Mail, label: "Enquiry", color: "#E8782A", action: () => { navigate("/contact"); setOpen(false); } },
   ];
 

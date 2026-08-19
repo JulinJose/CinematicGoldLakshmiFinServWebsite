@@ -7,28 +7,29 @@ import { GOLD_LOAN_PLANS_DATA, GoldLoanPlanDetail } from "../data/goldLoanPlans"
 
 const LOAN_STEPS = [
   {
-    id: 1, icon: Scale, title: "Gold Valuation", time: "15 min",
-    desc: "Our certified experts assess your gold using advanced XRF technology for precise purity and weight measurement. No estimates — exact numbers.",
+    id: 1, icon: FileText, title: "Submit KYC & Gold", time: "15 min",
+    desc: "Bring your gold jewellery along with Aadhaar/PAN for identity verification. The process begins with secure document validation.",
   },
   {
-    id: 2, icon: Coins, title: "Choose Your Plan", time: "5 min",
-    desc: "Select from Standard, Premium, or Elite loan plans tailored to your amount and tenure needs. Flexible repayment on your terms.",
+    id: 2, icon: Scale, title: "Gold Evaluation", time: "15 min",
+    desc: "Experts assess the purity and net weight of your jewellery using transparent valuation methods and the latest gold rate.",
   },
   {
-    id: 3, icon: Shield, title: "Instant Processing", time: "10 min",
-    desc: "Digital KYC and instant approval. Zero paperwork. Your gold moves to our bank-grade insured vault while you wait comfortably.",
+    id: 3, icon: CheckCircle, title: "Loan Approval", time: "10 min",
+    desc: "The eligible loan amount is calculated and approved instantly. You'll receive complete details of interest, tenure, and repayment.",
   },
   {
-    id: 4, icon: TrendingUp, title: "Financial Freedom", time: "Instant",
-    desc: "Funds transferred directly to your account the moment approval is confirmed. Use for business, education, medical, or any purpose.",
+    id: 4, icon: Coins, title: "Receive Funds & Close Anytime", time: "Instant",
+    desc: "The loan amount is transferred to your bank account. After repayment, your jewellery is returned safely with a loan closure receipt.",
   },
 ];
 
 const FAQS = [
-  { q: "What documents are required to get a Gold Loan?", a: "Only standard KYC documents: Aadhaar Card and PAN Card. Zero income proof, zero credit history checks, and zero physical paperwork needed." },
-  { q: "How is my gold stored and secured?", a: "Your gold is sealed in tamper-proof bags in your presence and stored in 24/7 monitored bank-grade vaults insured by leading national insurers." },
-  { q: "Can I repay my loan early?", a: "Yes! All GoldLakshmi loans feature zero prepayment penalty. You only pay interest for the exact duration your loan was active." },
-  { q: "What happens when I clear my loan?", a: "Your sealed gold packet is handed back to you immediately at the branch upon total settlement with absolute receipt verification." },
+  { q: "What documents are required to apply for a gold loan?", a: "You only need a valid government-issued Aadhaar Card or Passport, PAN Card (where applicable), and a recent photograph. The process is paper-light, and our team assists you with KYC verification for faster approval." },
+  { q: "Is my gold completely safe after I pledge it?", a: "Yes. Your jewellery is stored in high-security, insured vaults protected by 24/7 surveillance, restricted access, and industry-standard security protocols. Your pledged gold remains secure until the loan is fully closed." },
+  { q: "How is the loan amount determined?", a: "The sanctioned amount is calculated based on the purity, net weight, and current market value of your gold, while following RBI Loan-to-Value (LTV) guidelines. This ensures a fair and transparent valuation." },
+  { q: "How will I receive my loan amount?", a: "Once your gold is evaluated and documents are verified, the approved amount can be credited directly to your bank account or disbursed through approved digital payment methods, depending on the loan value and regulatory norms." },
+  { q: "Can I repay the loan before the due date?", a: "Absolutely. You may make partial payments, interest payments, or foreclose the entire loan before maturity. Early repayment options help reduce your overall interest cost, subject to the selected loan scheme." },
 ];
 
 export function LoansPage() {
@@ -71,7 +72,7 @@ export function LoansPage() {
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full text-[0.7rem] tracking-widest uppercase"
-            style={{ background: "linear-gradient(145deg, rgba(28, 22, 16, 0.95) 0%, rgba(16, 12, 8, 0.98) 100%)", border: "1px solid rgba(201,168,76,0.45)", color: "#C9A84C", fontFamily: "Raleway, sans-serif" }}>
+            style={{ background: "linear-gradient(145deg, rgba(28, 22, 16, 0.95) 0%, rgba(10, 12, 8, 0.98) 100%)", border: "1px solid rgba(201,168,76,0.45)", color: "#C9A84C", fontFamily: "Raleway, sans-serif" }}>
             <TrendingUp size={14} className="text-yellow-400" /> Fast & Transparent Finance
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-3" style={{ fontFamily: "Cinzel, serif" }}>
@@ -109,7 +110,7 @@ export function LoansPage() {
           })}
         </div>
 
-        {/* DETAILED PLAN CARD (MATCHING USER SCREENSHOT DESIGN IN DARK LUXURY THEME) */}
+        {/* DETAILED PLAN CARD */}
         <motion.div
           key={currentPlan.id}
           initial={{ opacity: 0, y: 15 }}
@@ -124,7 +125,7 @@ export function LoansPage() {
         >
           {/* TOP SECTION: IMAGE + PLAN TABLE */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-8">
-            {/* LEFT: IMAGE BANNER WITH OVERLAY TEXT */}
+            {/* LEFT: IMAGE BANNER */}
             <div className="md:col-span-5 relative rounded-xl overflow-hidden shadow-xl group border border-yellow-500/30">
               <img
                 src={currentPlan.img}
@@ -157,7 +158,6 @@ export function LoansPage() {
                   {currentPlan.subtitle}
                 </div>
 
-                {/* SPECIFICATION TABLE */}
                 <div className="overflow-x-auto rounded-xl border border-yellow-500/30 shadow-inner">
                   <table className="w-full text-left text-xs sm:text-sm border-collapse">
                     <thead>
@@ -178,7 +178,6 @@ export function LoansPage() {
                 </div>
               </div>
 
-              {/* APPLY NOW BUTTON INSIDE PLAN SUMMARY */}
               <div className="mt-6 flex items-center gap-4">
                 <button
                   onClick={() => navigate("/contact")}
@@ -195,35 +194,31 @@ export function LoansPage() {
             </div>
           </div>
 
-          {/* BOTTOM SECTION: TABS & CONTENT (INFORMATION / TERMS) */}
+          {/* BOTTOM SECTION: TABS & CONTENT */}
           <div className="border-t border-yellow-500/20 pt-6">
-            {/* TAB BUTTONS */}
             <div className="flex items-center border-b border-yellow-500/20 mb-6">
               <button
                 onClick={() => setActiveTab("info")}
-                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-t-xl ${
-                  activeTab === "info"
+                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-t-xl ${activeTab === "info"
                     ? "bg-gradient-to-r from-[#E85D04] to-[#FF9E43] text-white shadow-md"
                     : "text-gray-400 hover:text-yellow-400 bg-navy-900/60 border border-yellow-500/20 border-b-0"
-                }`}
+                  }`}
                 style={{ fontFamily: "Raleway, sans-serif" }}
               >
                 Information
               </button>
               <button
                 onClick={() => setActiveTab("terms")}
-                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-t-xl ml-2 ${
-                  activeTab === "terms"
+                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-t-xl ml-2 ${activeTab === "terms"
                     ? "bg-gradient-to-r from-[#E85D04] to-[#FF9E43] text-white shadow-md"
                     : "text-gray-400 hover:text-yellow-400 bg-navy-900/60 border border-yellow-500/20 border-b-0"
-                }`}
+                  }`}
                 style={{ fontFamily: "Raleway, sans-serif" }}
               >
                 Terms And Conditions
               </button>
             </div>
 
-            {/* TAB CONTENT CONTAINER */}
             <div className="p-5 sm:p-6 rounded-xl border border-yellow-500/25 bg-[#0A182E]/80 shadow-inner">
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: "Raleway, sans-serif" }}>
                 {activeTab === "terms" && currentPlan.termsText ? currentPlan.termsText : currentPlan.info}

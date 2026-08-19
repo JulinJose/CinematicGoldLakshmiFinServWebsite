@@ -437,7 +437,7 @@ export function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ y: -8, boxShadow: "0 12px 40px rgba(255, 215, 0, 0.22), 0 15px 35px rgba(0,0,0,0.7)" }}
-                className="flex-shrink-0 w-[300px] sm:w-[320px] rounded-2xl overflow-hidden snap-start transition-all flex flex-col justify-between"
+                className="flex-shrink-0 w-[85vw] sm:w-[320px] lg:w-[calc((100%-48px)/3)] rounded-2xl overflow-hidden snap-start transition-all flex flex-col justify-between"
                 style={{
                   background: "linear-gradient(145deg, rgba(22, 52, 88, 0.95) 0%, rgba(10, 24, 46, 0.98) 100%)",
                   border: "1px solid rgba(255, 215, 0, 0.45)",

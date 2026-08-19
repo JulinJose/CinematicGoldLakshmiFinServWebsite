@@ -160,14 +160,13 @@ export function ContactPage() {
                 </div>
 
                 <div className="flex items-center gap-4 py-2 border-b border-white/5">
-                  <a href="tel:+919828033273" className="flex items-center gap-4 w-full">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 flex-shrink-0">
-                      <Phone size={18} className="text-[#FF7A00]" />
-                    </div>
-                    <div>
-                      <div className="text-white text-xs font-semibold" style={{ fontFamily: "Raleway, sans-serif" }}>+91 9828 033 273</div>
-                    </div>
-                  </a>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 flex-shrink-0">
+                    <Phone size={18} className="text-[#FF7A00]" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <a href="tel:+919828033273" className="text-white text-xs font-semibold hover:text-[#FF7A00] transition-colors" style={{ fontFamily: "Raleway, sans-serif" }}>+91 9828 033 273</a>
+                    <a href="tel:+919636964363" className="text-white text-xs font-semibold hover:text-[#FF7A00] transition-colors" style={{ fontFamily: "Raleway, sans-serif" }}>+91 96369 64363</a>
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-4 py-2">
