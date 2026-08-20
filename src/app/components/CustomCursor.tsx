@@ -1,11 +1,30 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import { useIsMobile } from "./ui/use-mobile";
 
 export function CustomCursor() {
   const [pos, setPos] = useState({ x: -200, y: -200 });
   const [big, setBig] = useState(false);
+  const [isFinePointer, setIsFinePointer] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    // Only detect fine pointer device (like a mouse/trackpad)
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+    setIsFinePointer(mediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsFinePointer(e.matches);
+    };
+    mediaQuery.addEventListener("change", handleChange);
+
+    // If it's a mobile viewport or does not support fine pointer, do not add listeners
+    if (isMobile || !mediaQuery.matches) {
+      return () => {
+        mediaQuery.removeEventListener("change", handleChange);
+      };
+    }
+
     const onMove = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", onMove);
     const onEnter = () => setBig(true);
@@ -22,8 +41,11 @@ export function CustomCursor() {
     return () => {
       window.removeEventListener("mousemove", onMove);
       obs.disconnect();
+      mediaQuery.removeEventListener("change", handleChange);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile || !isFinePointer) return null;
 
   return (
     <>
@@ -42,3 +64,4 @@ export function CustomCursor() {
     </>
   );
 }
+

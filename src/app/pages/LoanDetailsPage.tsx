@@ -6,7 +6,7 @@ import { GOLD_LOAN_PLANS_DATA } from "../data/goldLoanPlans";
 export function LoanDetailsPage() {
 
   return (
-    <div className="pt-24 pb-20 px-4 sm:px-6 min-h-screen" style={{ background: "linear-gradient(180deg, #050A18 0%, #081528 100%)" }}>
+    <div className="pt-32 md:pt-40 pb-20 px-4 sm:px-6 min-h-screen" style={{ background: "linear-gradient(180deg, #050A18 0%, #081528 100%)" }}>
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">

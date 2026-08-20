@@ -44,7 +44,7 @@ const GLOBAL_CSS = `
     0%,100% { opacity: 0.03; }
     50%      { opacity: 0.08; }
   }
-  @media (pointer: fine) {
+  @media (pointer: fine) and (min-width: 768px) {
     * { cursor: none !important; }
   }
   input[type=range] { -webkit-appearance: none; appearance: none; }
