@@ -392,7 +392,7 @@ export function HomePage() {
                 Our Gold Loan <span style={goldGradText()}>Plans</span>
               </h2>
               <p className="text-gray-400 text-sm mt-2 max-w-xl" style={{ fontFamily: "Raleway, sans-serif" }}>
-                Explore custom gold finance schemes engineered for maximum LTV, lowest interest rates, and instant disbursal.
+                Explore custom gold finance schemes engineered for maximum LTV, lowest interest rates, and instant disbursal
               </p>
             </div>
 
